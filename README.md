@@ -26,8 +26,6 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
-
-
 # Hands-on CodePipeline-01 : Creating and CI/CD Pipeline via AWS CodePipeline
 
 Purpose of the this hands-on training is to create CI/CD Pipeline for Angular App with AWS CodePipeline 
@@ -36,7 +34,7 @@ Purpose of the this hands-on training is to create CI/CD Pipeline for Angular Ap
 
 At the end of the this hands-on training, students will be able to;
 
-- understand what is the CI/CD Pipeline
+- understand what is the CI/CD Pipeline.
 
 - demonstrate their knowledge on how to creating CI/CD Pipeline.
 
@@ -46,9 +44,9 @@ At the end of the this hands-on training, students will be able to;
 
 - use CodeBuild to build Angular project
 
-- using buildspec.yml file
+- using buildspec.yml file.
 
-- using test phases for Angular project via Codebuild and integrate to the CodePipeline project
+- using test phases for Angular project via Codebuild and integrate to the CodePipeline project.
 
 ## Outline
 - 
