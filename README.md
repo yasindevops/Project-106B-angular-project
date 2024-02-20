@@ -1,52 +1,52 @@
-# MyAngularProject
+# MyAngularProject:
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.0.6.
 
-## Development server
+## Development server:
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Code scaffolding:
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+## Build:
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
 
-## Running unit tests
+## Running unit tests:
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Running end-to-end tests:
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Further help:
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
 
 # Hands-on CodePipeline-01 : Creating and CI/CD Pipeline via AWS CodePipeline
 
-Purpose of the this hands-on training is to create CI/CD Pipeline for Angular App with AWS CodePipeline 
+Purpose of the this hands-on training is to create CI/CD Pipeline for Angular App with AWS CodePipeline. 
 
 ## Learning Outcomes
 
 At the end of the this hands-on training, students will be able to;
 
-- understand what is the CI/CD Pipeline.
+- Understand what is the CI/CD Pipeline.
 
-- demonstrate their knowledge on how to creating CI/CD Pipeline.
+- Demonstrate their knowledge on how to creating CI/CD Pipeline.
 
-- create S3 bucket fpr deployment.
+- Create S3 bucket fpr deployment.
 
-- use GitCommit for version control system-git and create Repository 
+- Use GitCommit for version control system-git and create Repository 
 
-- use CodeBuild to build Angular project
+- Use CodeBuild to build Angular project.
 
-- using buildspec.yml file.
+- Using buildspec.yml file.
 
-- using test phases for Angular project via Codebuild and integrate to the CodePipeline project.
+- Using test phases for Angular project via Codebuild and integrate to the CodePipeline project.
 
 ## Outline
 - 
@@ -64,7 +64,7 @@ At the end of the this hands-on training, students will be able to;
 # PART 1 - Creating a Bucket and Route 53 record for deployment 
 
 ## Section 2: Create Bucket 
-- Create a bucket with following properties, 
+- Create a bucket with following properties: 
 
 ```text
 Bucket name                 : myangular.<domainname>
@@ -77,7 +77,7 @@ Object-level logging        : Disabled
 
 ```
 
-- After creation open the bucket and set "Static WebHosting"
+- After creation open the bucket and set "Static WebHosting".
 
 - Click on PROPERTIES  >>>>> STATIC WEBSITE HOSTING >>>> Edit
 
@@ -88,13 +88,13 @@ Index document              : index.html
 Error document - optional   : index.html
 ```
 
-- then copy the static Webhosting URL 
+- then copy the static Webhosting URL. 
 
 ## Section 2: Create Record
 
-- Go to Route 53 service
+- Go to Route 53 service.
 
-- Create Alias record for S3 bucket
+- Create Alias record for S3 bucket.
 
 ```text
 Subdomain   : myangular.<domainname>
@@ -109,8 +109,8 @@ TTL         : 60
 
 ## Section 1: Creating CodeCommit repository
 
-- Go to the CodeCommit and click on "Create repository"
-- Repository settings
+- Go to the CodeCommit and click on "Create repository".
+- Repository settings.
 
 ```
 Repository name         : xxxxxxmyangularproject2023
@@ -124,18 +124,18 @@ Enable Amazon CodeGuru Reviewer for Java and Python - optional: Keep it as is
 
 ### Step1: 
 
-- First get Gitcommit credentials from IAM
-- Go to IAM and Click "Users >>>>> Select user---->>Security Credential--->> HTTPS Git credentials for AWS CodeCommit"
+- First get Gitcommit credentials from IAM.
+- Go to IAM and Click "Users >>>>> Select user---->>Security Credential--->> HTTPS Git credentials for AWS CodeCommit".
 
-- Click on "Generate credentials"
+- Click on "Generate credentials".
 - Download the .csv file . 
-- We'll use this credentials via Git
+- We'll use this credentials via Git.
 
 ### Step2: 
 
-- Unzip the Angular on desktop
-- open the "my-angular-project" folder via gitbash
-- then do the settings with following commands
+- Unzip the Angular on desktop.
+- open the "my-angular-project" folder via gitbash.
+- then do the settings with following commands.
 
 ```
 git status
@@ -153,8 +153,8 @@ git push origin master
 
 ### Step1: 
 
-- Go to the CodePipeline menu
-- Click on Create Pipeline 
+- Go to the CodePipeline menu.
+- Click on Create Pipeline.
 
 - Choose pipeline settings:
 ```
@@ -201,7 +201,7 @@ Project name       : Click on "Create Project"  and on the opening page
     - Buildspec name - optional                 : Keep it as is - Empty
     - Log                                       : Keep it as is - Empty
 
-    Click on "Continue to Codepipeline" >>> this will direct you to the CodePipeline page again
+    Click on "Continue to Codepipeline" >>> this will direct you to the CodePipeline page again.
 
 - Environment variables - optional : Keep it as is
 - Build type                       :  Keep it as is
@@ -224,16 +224,16 @@ Project name       : Click on "Create Project"  and on the opening page
     - Cache control - optional      : keep it as is --Empty 
 
 ```
-- create pipeline
-- navigate to Pipeline menu and Show the menu
+- create pipeline.
+- navigate to Pipeline menu and Show the menu.
 
 ### Step2: 
 
 - Go to the "my-angular project" in you local and open  "src>>>  app >>> app.component.html"
 
-- Change "Version 1" as "Version 2 " and save 
+- Change "Version 1" as "Version 2 " and save.
 
-- Open the git terminal and commit the new changes to CodeCommit 
+- Open the git terminal and commit the new changes to CodeCommit. 
 ```
 git status
 git add .
@@ -247,19 +247,19 @@ git push origin master
 
 ### Step1:
 
-- Go to the "my-angular project" in you local and open  `src`>>>  `calculatator` >>> `calculator.component.spec.ts` and "calculator.component.ts"
+- Go to the "my-angular project" in you local and open  `src`>>>  `calculatator` >>> `calculator.component.spec.ts` and "calculator.component.ts".
 
-- Show the unit test 
+- Show the unit test. 
 
-- Add testing your CodePipeline
+- Add testing your CodePipeline.
 
-- Click on you pipeline >>> Edit 
+- Click on you pipeline >>> Edit. 
 
-- Click on "Edit stage" of the "Edit: Build" section
+- Click on "Edit stage" of the "Edit: Build" section.
 
 - Click "Add action group" at the top of the "Build" part - !!!!!!since we click top this process will be execute before build. !!!!!
 
-- on th opening page 
+- On th opening page. 
 
 ```
 Edit action         : osvaldo_add_test
